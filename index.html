@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhaar Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        .header img {
+            height: 60px;
+        }
+
+        .horizontal-line {
+            border-top: 2px solid #000;
+            margin: 0 30px;
+           
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        .form-box {
+            background-color: #fff;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .form-box h2 {
+            background: linear-gradient(to right, #002147, #0056b3);
+            color: white;
+            margin: -30px -30px 20px -30px;
+            padding: 15px 0;
+            font-size: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+        }
+
+        .footer {
+            background-color: #002147;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+        }
+        .header img {
+    height: 60px;
+}
+
+.header img:first-child {
+    margin-left: 100px; 
+}
+
+.header img:last-child {
+    margin-right: 100px; 
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header with Logos -->
+    <div class="header">
+        <img src="https://tathya.uidai.gov.in/access/static/media/uidai_english_logo.dd2d2a1cdbf8dcd226664631cb383029.svg" alt="Logo Left">
+        <img src="https://tathya.uidai.gov.in/access/static/media/aadhaar_english_logo.9a2d63795a7f7bdd7acb2148585336be.svg" alt="Logo Right">
+    </div>
+
+    <!-- Horizontal Line -->
+    <div class="horizontal-line"></div>
+
+    <!-- Login Form -->
+    <div class="container">
+        <div class="form-box">
+            <h2>Login to Aadhaar</h2>
+            <div class="form-group">
+                <label for="aadhaarNumber">Enter Aadhaar Number</label>
+                <input type="number" id="aadhaarNumber" placeholder="1234 5678 9012" maxlength="12" 
+        oninput="this.value = this.value.replace(/\D/g, '').slice(0, 12);" 
+        title="Aadhaar number must be exactly 12 digits and numeric">
+            </div>
+            <div class="form-group">
+                <label for="name">Enter Name</label>
+                <input type="text" id="name" placeholder="Your Full Name">
+            </div>
+            <button class="btn" onclick="login()">Login</button>
+        </div>
+    </div>
+
+    
+    <script>
+        function login() {
+            const aadhaarNumber = document.getElementById('aadhaarNumber').value;
+            const name = document.getElementById('name').value;
+
+            if (!aadhaarNumber || !name) {
+                alert("Please fill in both the Aadhaar Number and Name.");
+            } else {
+                alert(`Login successful for Aadhaar: ${aadhaarNumber} and Name: ${name}`);
+            }
+        }
+    </script>
+</body>
+</html>
